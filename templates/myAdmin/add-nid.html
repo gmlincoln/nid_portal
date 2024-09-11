@@ -1,0 +1,53 @@
+{% extends 'common/master.html' %}
+{% load static %}
+
+{% block body %}
+
+<div class="common-container">
+    <div class="form-container">
+        <h2 style="margin-bottom: 20px;">NID Form</h2>
+
+        <form action="{% url 'addNID' %}" method="POST">
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label for="user-name">User Name:</label>
+                <select name="user-name" id="">
+
+                    {% for user in users %}
+                        <option value="{{user.id}}">
+                            {{user.username}}
+                        </option>
+                    {% endfor %}
+
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nid-number">NID Number:</label>
+                <input type="text" id="nid-number" name="nid-number" required placeholder="A12312342">
+            </div>
+
+            <div class="form-group">
+                <label for="date-of-issue">Date of Issues:</label>
+                <input type="date" id="date-of-issue" name="date-of-issue" required>
+            </div>
+
+            <div class="form-group">
+                <label for="place-of-issue">Place of Issue:</label>
+                <input type="text" id="place-of-issue" name="place-of-issue" required>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Add Citizen">
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock body %}

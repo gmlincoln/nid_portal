@@ -1,0 +1,31 @@
+{% extends 'common/master.html' %}
+
+{% load static %}
+
+{% block body %}
+    <div class="container">
+        <div class="id-card">
+            <div class="id-header">
+                <img src="{% static 'img/nid.jpg' %}" alt="">
+            </div>
+            <hr>
+            <div class="id-details">
+                <div class="id-details-left">
+                    <img src="/{{users.user.profile_pic}}" alt="">
+                </div>
+                <div class="id-details-right">
+                    <p>
+                        Name: {{users.user.first_name}} {{users.user.last_name}}
+                    </p>
+                    <p>Date of Issue: {{users.date_of_issue}}</p>
+                    <p>Place of Issue: {{users.place_of_issue}}</p>
+
+                    <p style="color:red; font-weight: 700;"><span style="color: #000;">ID No.</span> {{users.nid_number}}</p>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+    

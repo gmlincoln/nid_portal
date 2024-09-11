@@ -1,0 +1,15 @@
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="#">NID Portal</a>
+    </div>
+    <div class="navbar-right">
+        <a href="{% url 'citizenList' %}">View Citizen List</a>
+        <a href="{% url 'addNID' %}">Add Citizen</a>
+        
+        <a class="admin-design" href="">
+            <img style="height: 30px; width: 30px; border-radius: 50%;" src="/{{user.profile_pic}}" alt="">
+         {{user.first_name}}
+        </a>
+        <a href="{% url 'logoutPage' %}">Logout</a>
+    </div>
+</div>

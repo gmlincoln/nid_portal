@@ -1,0 +1,41 @@
+{% extends 'common/master.html' %}
+{% load static %}
+
+
+
+{% block body %}
+<h1 style="text-align: center; margin: 20px 0;">Citizen List</h1>
+
+    <table id="customers">
+        <tr>
+            <th>Username</th>
+            <th>Profile Picture</th>
+            <th>NID No.</th>
+            <th>Full Name</th>
+            <th>Date of Issue</th>
+            <th>Place of Issue</th>
+            <th>Actions</th>
+        </tr>
+        
+        {% for i in users %}
+        <tr>
+            <td>{{i.user.username}}</td>
+            <td>
+                <img style="height: 40px; width: 40px;" src="/{{i.user.profile_pic}}" alt="">
+            </td>
+            <td>{{i.nid_number}}</td>
+            <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+            <td>{{i.date_of_issue}}</td>
+            <td>{{i.place_of_issue}}</td>
+            <td>
+                <a href="{% url 'removeCitizen' i.id %}">Delete</a>
+                <a href="{% url 'singleNid' i.id %}">View</a>
+                <a href="{% url 'updateNID' i.id %}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+            
+        
+        
+    </table>
+    {% endblock body %}

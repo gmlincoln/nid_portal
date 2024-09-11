@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.navbar-left {
+    font-size: 20px;
+}
+
+.navbar-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.admin-design{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Add NID */
+
+.common-container {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 50px;
+}
+.form-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, 
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.form-group input[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 16px;
+}
+.form-group input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+/* Citizen List */
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+  .id-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+  }
+  .id-card{
+    margin-top: 100px;
+    border: 1px solid gray;
+  }
+  .id-header img{
+    height: 100px;
+    width: 500px;
+  }
+  .id-details-left img{
+    height: 120px;
+    width: 100px;
+  }
+  .id-details{
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    margin: 20px 0px 20px 150px;
+  }
+
+  .id-details-right p{
+    margin-bottom: 10px;
+  }

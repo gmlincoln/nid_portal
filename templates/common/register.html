@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 16px;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+    <h2>Registration Form</h2>
+
+        <form action="{% url 'registerPage' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required placeholder="John">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required placeholder="Doe">
+            </div>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="johndoe">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="john.doe@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="profile_pic">Upload Your Picture:</label>
+                <input type="file" id="profile_pic" name="profile_pic" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="user-type">User Type:</label>
+                <select name="user-type" id="">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="******">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required placeholder="******">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+        <p>Already have an account? <a href="{% url 'loginPage' %}">Login</a></p>
+    
+    </div>
+</body>
+</html>

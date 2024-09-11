@@ -1,0 +1,71 @@
+{% extends 'common/master.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="common-container">
+    <div class="form-container">
+        <h2 style="margin-bottom: 20px;">Update NID Form</h2>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+
+            
+             <div class="form-group">
+                <input type="text" id="firstname" value="{{data.id}}"  name="firstname" style="display: none;" >
+            </div>
+                <div class="form-group">
+                    <label for="firstname">First Name: </label>
+                    <input type="text" id="firstname" value="{{data.user.first_name}}"  name="firstname" required >
+                </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name: </label>
+                    <input type="text" id="lastname" value="{{data.user.last_name}}" name="lastname" required >
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="{{data.user.username}}" required >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="{{data.user.email}}" required >
+                </div>
+                
+                <div class="form-group">
+                    <label for="profile_pic">Upload Your Picture:</label>
+                    
+                    {% if data.user.profile_pic %}
+                        <img style="height: 50px; width: 50px;" src="/{{data.user.profile_pic}}" alt="">
+                    {% endif %}
+                        
+                    <input type="file" id="profile_pic" name="profile_pic">
+                </div>
+                
+
+            <div class="form-group">
+                <label for="nid-number">NID Number:</label>
+                <input type="text" id="nid-number" name="nid-number"  value="{{data.nid_number}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date-of-issue">Date of Issues:</label>
+                <input type="date" id="date-of-issue" name="date-of-issue" value="{{data.data_of_issue}}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="place-of-issue">Place of Issue:</label>
+                <input type="text" id="place-of-issue" name="place-of-issue" value="{{data.place_of_issue}}" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Update Citizen">
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock body %}
